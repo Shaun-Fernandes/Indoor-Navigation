@@ -44,6 +44,8 @@ dependencies {
     implementation project(path: ':mapwize-ui')
     implementation 'io.mapwize.sdk:mapwize-sdk:3.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'com.lemmingapex.trilateration:trilateration:1.0.2'
 }
 repositories {
     mavenCentral()
