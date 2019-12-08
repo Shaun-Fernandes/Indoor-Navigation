@@ -80,7 +80,7 @@ public class WifiIndoorLocationProvider extends IndoorLocationProvider implement
 //        routersScanned.addAll(routersScannedFake);
 
         // Get the users current location            \\\|routersScannedFake|///  <- (For debugging purposes)
-        IndoorLocation currentLocation = calculateLocation(routersScanned, routers, 4);
+        IndoorLocation currentLocation = calculateLocation(routersScanned, routers, 3);
         if (currentLocation != null) {
             Log.e("CURRENT LOCATION!!! :", "Lat = " + currentLocation.getLatitude() + "Long = " + currentLocation.getLongitude());
             //this line automatically updates the location on the map
@@ -183,6 +183,17 @@ public class WifiIndoorLocationProvider extends IndoorLocationProvider implement
         return currentLocation;
 
     }
+
+    /** TODO:
+     *      Implement this function. Make it so it looks through the top 'n' (maybe top 4/5) matches b/w scanned and stored routers,
+     *      counts the number of times each floor is seen and returns the most frequently occurring floor.
+     *      Use that given floor, to assign as the users location, and also adjust the above function to only scan for routers on this given floor
+     */
+    private int getFloorNumber(ArrayList<RouterScanned> routersScanned, ArrayList<RouterStored> routersStored, int n){
+        int floorNo = 0;
+        return floorNo;
+    }
+
 
 
     /** Scan the JSON file to get the list of all routers with their mac addresses and lat/long locaions */
